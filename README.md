@@ -25,3 +25,37 @@ To start out, we can use a pretrained model. Here, we'll use a multilingual BERT
 First, we download the tokenizer.
 
 -- We will first break down our text into tokens by using RoBERTa own tokenizer using AutoTokenizer and the model name in order for the tokenizer to know how to tokenize. This will download all the necessary files. This model includes more than 100 languages which is useful since our data also contains multiple languages.--
+
+Creating & Training Model
+Now, we can incorporate the BERT transformer into a Keras Functional Model. For more information about the Keras Functional API, see: https://www.tensorflow.org/guide/keras/functional.
+
+This model was inspired by the model in this notebook: https://www.kaggle.com/tanulsingh077/deep-learning-for-nlp-zero-to-transformers-bert#BERT-and-Its-Implementation-on-this-Competition, which is a wonderful introduction to NLP!
+
+--Now, we are ready to build the actual model. As mentioned above, the final model will consist of a RoBERTa Large model that performs contextual embedding of the input token IDs which are then passed to a classifier that will return probabilites for each of the possible three labels "entailment" (0), "neutral" (1), or "contradiction" (2). The classifier consists of a regular densely-connected neural network.--
+
+Creating & Training Model
+Now, we can incorporate the BERT transformer into a Keras Functional Model. For more information about the Keras Functional API, see: https://www.tensorflow.org/guide/keras/functional.
+
+This model was inspired by the model in this notebook: https://www.kaggle.com/tanulsingh077/deep-learning-for-nlp-zero-to-transformers-bert#BERT-and-Its-Implementation-on-this-Competition, which is a wonderful introduction to NLP!
+
+--Now, we are ready to build the actual model. As mentioned above, the final model will consist of a RoBERTa Large model that performs contextual embedding of the input token IDs which are then passed to a classifier that will return probabilites for each of the possible three labels "entailment" (0), "neutral" (1), or "contradiction" (2). The classifier consists of a regular densely-connected neural network.--
+
+Creating & Training Model
+Now, we can incorporate the BERT transformer into a Keras Functional Model. For more information about the Keras Functional API, see: https://www.tensorflow.org/guide/keras/functional.
+
+This model was inspired by the model in this notebook: https://www.kaggle.com/tanulsingh077/deep-learning-for-nlp-zero-to-transformers-bert#BERT-and-Its-Implementation-on-this-Competition, which is a wonderful introduction to NLP!
+
+--Now, we are ready to build the actual model. As mentioned above, the final model will consist of a RoBERTa Large model that performs contextual embedding of the input token IDs which are then passed to a classifier that will return probabilites for each of the possible three labels "entailment" (0), "neutral" (1), or "contradiction" (2). The classifier consists of a regular densely-connected neural network.--
+Creating & Training Model
+Now, we can incorporate the BERT transformer into a Keras Functional Model. For more information about the Keras Functional API, see: https://www.tensorflow.org/guide/keras/functional.
+
+This model was inspired by the model in this notebook: https://www.kaggle.com/tanulsingh077/deep-learning-for-nlp-zero-to-transformers-bert#BERT-and-Its-Implementation-on-this-Competition, which is a wonderful introduction to NLP!
+
+--Now, we are ready to build the actual model. As mentioned above, the final model will consist of a RoBERTa Large model that performs contextual embedding of the input token IDs which are then passed to a classifier that will return probabilites for each of the possible three labels "entailment" (0), "neutral" (1), or "contradiction" (2). The classifier consists of a regular densely-connected neural network.--
+
+
+![image](https://user-images.githubusercontent.com/96504008/158647914-3d8a9943-a260-481b-924d-90476ad914cb.png)
+
+--The graph above illustrates in a very detailed way what our model and its inputs look like: input_word_ids, input_mask, and input_type_ids are the 3 input variables for the BERT model, which in turn returns a tuple. The word embeddings that are stored in the first entry of the tuple are then given to the classifier which then returns 3 categorical probabilities. The question marks stand for the number of rows in the input data which are of course unknown.--
+
+
